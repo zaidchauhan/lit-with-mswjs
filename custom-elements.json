@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "lit-with-mswjs",
+      "description": "A component for todolist",
+      "events": [],
+      "slots": [],
+      "cssProperties": []
+    }
+  ]
+}

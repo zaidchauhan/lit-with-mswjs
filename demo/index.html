@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit-html';
+    import { worker } from '../mocks/browser.js';
+    import '../lit-with-mswjs.js';
+
+    await worker.start({
+      serviceWorker: {
+        url: '/demo/mockServiceWorker.js',
+      },
+    });
+
+    worker.printHandlers();
+
+    render(
+      html`
+        <lit-with-mswjs>
+          some more light-dom
+        </lit-with-mswjs>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
