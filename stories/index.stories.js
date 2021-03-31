@@ -1,17 +1,16 @@
 import { html } from 'lit-html';
 import '../lit-with-mswjs.js';
-// import { worker } from '../mocks/browser.js';
+import { worker } from '../mocks/browser.js';
 
 export default {
   title: 'LitWithMswjs',
   component: 'lit-with-mswjs',
-  // decorators:[
-  //   (Story) => {
-  //     worker.resetHandlers();
-  //     return html`<Story />`;
-  //     // return <Story />
-  //   },
-  // ],
+  decorators:[
+    (Story) => {
+      worker.resetHandlers();
+      return Story();
+    },
+  ],
   argTypes: {},
 };
 
